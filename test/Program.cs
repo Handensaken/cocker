@@ -14,22 +14,18 @@ namespace test
             Paddle leftPaddle = new Paddle(10 , KeyboardKey.KEY_W, KeyboardKey.KEY_S);
             Paddle rightPaddle = new Paddle(770, KeyboardKey.KEY_UP, KeyboardKey.KEY_DOWN);
 
-           // Rectangle ballRect = new Rectangle(800/2-10, 600/2-10, 20,20);
-           // Rectangle ballRect2 = new Rectangle(800/2-50, 600/2-50, 20,20);
+            ball theBall = new ball();
+
+            Score mgm = new Score(); //God damn it cant have shit in vs code
+
             while (!Raylib.WindowShouldClose())
             {
-               // ballRect.x +=0.5f;
                 Paddle.UpdateAll();
+                theBall.Update();
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.GOLD);
                 Paddle.DrawAll();
-
-             //   Raylib.DrawRectangleRec(ballRect, Color.BLACK);
-              //  Raylib.DrawRectangleRec(ballRect2, Color.BLACK);
-
-             //   if(Raylib.CheckCollisionRecs(ballRect, ballRect2)){
-              //      Raylib.DrawText("collided" , 10 , 500, 64, Color.BLACK);
-             //   }
+                theBall.Draw();
 
                 Raylib.EndDrawing();
             }

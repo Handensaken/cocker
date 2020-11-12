@@ -30,7 +30,7 @@ namespace test
             {
                 rectangle.y -= 4f;
             }
-            if (Raylib.IsKeyDown(downKey) && rectangle.y <= 600)
+            if (Raylib.IsKeyDown(downKey) && rectangle.y <= 550)
             {
                 rectangle.y += 4f;
             }
