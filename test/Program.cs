@@ -16,8 +16,7 @@ namespace test
 
             ball theBall = new ball();
 
-            Score mgm = new Score(); //God damn it cant have shit in vs code
-
+            Score score = new Score();
             while (!Raylib.WindowShouldClose())
             {
                 Paddle.UpdateAll();
@@ -26,7 +25,7 @@ namespace test
                 Raylib.ClearBackground(Color.GOLD);
                 Paddle.DrawAll();
                 theBall.Draw();
-
+                score.DrawScore();
                 Raylib.EndDrawing();
             }
 

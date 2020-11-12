@@ -12,13 +12,10 @@ namespace test
 
         int bounceCount;
         int diffScale;
+        Score score = new Score();
 
-        int leftPoints;
-        int rightPoints;
         public ball()
         {
-            rightPoints = 0;
-            leftPoints = 0;
             diffScale = 8;
             bounceCount = 0;
             rect = new Rectangle(800 / 2 - 10, 600 / 2 - 10, 20, 20);
@@ -47,6 +44,15 @@ namespace test
             rect.y += speed.Y;
             if (rect.x > 800 - 20 || rect.x < 0)
             {
+                bool side = false;
+                
+                if(rect.x<0){
+                    side = false;
+                }
+                else{
+                    side = true;
+                }
+                score.CalculateScore(side);
                 speed.X = -speed.X;
                 rect.x = 800 / 2 - 10;
                 rect.y = 600 / 2 - 10;
